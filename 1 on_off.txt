@@ -1,0 +1,16 @@
+const red = 15;
+const green = 12;
+const blue = 13;
+
+digitalWrite(red, 0);
+digitalWrite(green, 0);
+digitalWrite(blue, 0);
+
+var on = false;
+
+function toggle() {
+ on = !on;
+ digitalWrite(red, on);
+}
+
+var i = setInterval(toggle, 500);
