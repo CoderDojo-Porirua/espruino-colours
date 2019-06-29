@@ -1,0 +1,40 @@
+const red = 15;
+const green = 12;
+const blue = 13;
+//const ldr = A0;
+
+var  onRed = false;
+var onGreen = false;
+var onBlue = false;
+digitalWrite(red,onRed);
+digitalWrite(green,onGreen);
+digitalWrite(blue,onBlue);
+
+function runEachSecond(pin, check) {
+  setInterval(function() {
+    check = !check;
+    digitalWrite(pin,check);
+  }, 1200);
+}
+
+function flash(pin) {
+  digitalWrite(pin, true);
+  var interval1 = setInterval(function() {
+    digitalWrite(pin, false);
+    clearInterval(interval1);
+  },400);
+}
+
+setInterval(function() {
+  flash(red);
+  var interval = setInterval(function() {
+    flash(green);
+    clearInterval(interval);
+  }, 400);
+  var interval2 = setInterval(function() {
+    flash(blue);
+    clearInterval(interval2);
+  }, 800);
+}, 1200);
+
+
