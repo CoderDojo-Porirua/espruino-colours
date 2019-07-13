@@ -1,0 +1,26 @@
+const red = 15;
+const green = 12;
+const blue = 13;
+//const ldr = A0;
+
+setInterval(function() {var interval = setInterval(function() {
+    digitalWrite(red, true);
+    clearInterval(interval);
+  }, 600);
+  digitalWrite(red,false);
+  digitalWrite(green,false);
+  digitalWrite(blue,false);
+
+  var interval2 = setInterval(function() {
+    digitalWrite(red, true);
+    clearInterval(interval2);
+  }, 1000);
+  var interval3 = setInterval(function() {
+    digitalWrite(green, true);
+    clearInterval(interval3);
+  }, 2000);
+  var interval4 = setInterval(function() {
+    digitalWrite(blue, true);
+    clearInterval(interval4);
+  }, 3000);
+}, 4000);
