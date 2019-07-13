@@ -10,13 +10,6 @@ digitalWrite(red,onRed);
 digitalWrite(green,onGreen);
 digitalWrite(blue,onBlue);
 
-function runEachSecond(pin, check) {
-  setInterval(function() {
-    check = !check;
-    digitalWrite(pin,check);
-  }, 1200);
-}
-
 function flash(pin) {
   digitalWrite(pin, true);
   var interval1 = setInterval(function() {
@@ -30,11 +23,11 @@ setInterval(function() {
   var interval = setInterval(function() {
     flash(green);
     clearInterval(interval);
-  }, 400);
+  }, 600);
   var interval2 = setInterval(function() {
     flash(blue);
     clearInterval(interval2);
-  }, 800);
-}, 1200);
+  }, 1200);
+}, 2000);
 
 
